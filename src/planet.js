@@ -5,9 +5,9 @@ class Planet{
     this.livingBeing = livingBeing;
   }
 
-  earthAgeToSeconds(age){
-    return age * 365 *24 * 3600; 
-  }
+ 
+
+  
 }
 
 export {Planet};
