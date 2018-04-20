@@ -1,7 +1,12 @@
 class Planet{
-  constructor(earthYearRatio, avgLifespan) {
-    this.earthYearRatio = earthYearRatio;
-    this.avgLifespan = avgLifespan;
+  constructor(name, earthYear, livingBeing) {
+    this.name = name;
+    this.earthYear = earthYear;
+    this.livingBeing = livingBeing;
+  }
+
+  earthAgeToSeconds(age){
+    return age * 365 *24 * 3600; 
   }
 }
 
