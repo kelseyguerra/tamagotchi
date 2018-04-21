@@ -31,6 +31,9 @@ class GalacticAgeCaculator{
     return new Date((nextEarthBirthday - Date.now())*this.planet.earthYear + Date.now());
   }
   
+  yearsToGoOnOtherPlanets(){
+    return this.livingBeing.avgLifespan*this.planet.earthYear - this.planetAge();
+  }
 
 }
 
