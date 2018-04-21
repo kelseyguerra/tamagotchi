@@ -61,5 +61,12 @@ $().ready( ()=> {
       $(".planets").append(output);
     }
 
+    // empty files
+    $("input").val("");
+
+
+    $(".reset").click(() => {
+      location.reload();
+    });
   });
 });
