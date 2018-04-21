@@ -23,10 +23,14 @@ describe("GalacticAgeCaculator", function(){
     expect(resuableCalcs.planetAge()).toBeGreaterThan(1.88*5.9);
   });
 
-  it("should return ", () => {
+  it("should return a date as next birthday", () => {
     expect(resuableCalcs.nextBirthdayDate()).toBeDate();
 
-  })
+  });
+
+  it("should return ", () => {
+    expect(resuableCalcs.yearsToGoOnOtherPlanets()).toBeLessThanOrEqual(154.16);
+  });
 
 
 });
