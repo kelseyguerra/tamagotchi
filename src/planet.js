@@ -1,13 +1,10 @@
-class Planet{
-  constructor(name, earthYear, livingBeing) {
+class Planet {
+  constructor(name = '', earthYear, livingBeing) {
     this.name = name;
     this.earthYear = earthYear;
     this.livingBeing = livingBeing;
   }
 
- 
-
-  
 }
 
-export {Planet};
+export { Planet };

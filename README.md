@@ -85,36 +85,3 @@ This software uses code from several open source packages.
 
 Copyright (c) 2018 Adriana
 
-
-class Earth{
-
-}
-
-class planet
-  property
-  - earthYear
-  - new livingBeing(10, 45);
-  method:
-  - earthAgeToSeconds(earthAge)
-  - timeDelta(earthAge, now())
-  - earthAge()
-  - planetAge(){
-    this.earthYear*earthAge
-  }
-  - nextBirthday(){
-    parse(earthAge() + 1) 
-  }
-
-
-class livingBeing
-  property
-  - avgLifespan
-  - age
-
-class Calcus
-  property
-  - planet
-  method:
-  - ageOnOtherPlants(earthAge, earthYearRatio)
-  - yearsToGoOnOtherPlanets(currentAge, avgLifespan)
-  - nextBirthdayOnOtherPlanets(earthYearRatio)
