@@ -28,7 +28,7 @@ describe("GalacticAgeCaculator", function () {
 
   });
 
-  it("should return ", () => {
+  it("should return 154 or less", () => {
     expect(resuableCalcs.yearsToGoOnOtherPlanets()).toBeLessThanOrEqual(154.16);
   });
 

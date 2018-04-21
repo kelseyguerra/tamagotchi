@@ -14,8 +14,7 @@ class GalacticAgeCaculator {
   }
 
   planetAge() {
-    debugger;
-    return this.livingBeing.earthAge() * this.planet.earthYear;
+    return Math.ceil(this.livingBeing.earthAge() * this.planet.earthYear);
   }
 
   nextBirthdayDate() {
@@ -28,7 +27,9 @@ class GalacticAgeCaculator {
     } else {
       nextEarthBirthday = new Date(this.livingBeing.birthday).setFullYear((new Date().getFullYear() + 1));
     }
-    return new Date((nextEarthBirthday - Date.now()) * this.planet.earthYear + Date.now());
+    let planetBirthday = new Date((nextEarthBirthday - Date.now()) * this.planet.earthYear + Date.now());
+    return planetBirthday.getMonth() + "/" + planetBirthday.getDate() + "/" + planetBirthday.getFullYear(); 
+  
   }
 
   yearsToGoOnOtherPlanets() {
