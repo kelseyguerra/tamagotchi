@@ -32,7 +32,11 @@ class GalacticAgeCaculator{
   }
   
   yearsToGoOnOtherPlanets(){
-    return this.livingBeing.avgLifespan*this.planet.earthYear - this.planetAge();
+    let leftYears = this.livingBeing.avgLifespan*this.planet.earthYear - this.planetAge();
+    if (leftYears < 0){
+      leftYears = this.planetAge() - this.livingBeing.avgLifespan*this.planet.earthYear;
+    }
+    return leftYears;
   }
 
 }
