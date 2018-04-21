@@ -8,11 +8,28 @@
 // If a user has already surpassed the average life expectancy, return the number of years they have lived past the life expectancy.
 
 class GalacticAgeCaculator{
-  constructor(planet, earthAge){
+  constructor(planet, livingBeing){
     this.planet = planet;
-    this.earthAge = earthAge;
+    this.livingBeing = livingBeing;
   }  
 
+  planetAge(){
+    debugger;
+    return this.livingBeing.earthAge() * this.planet.earthYear;
+  }
+
+  nextBirthdayDate(){
+    new Date("March 21, 2012").setFullYear(new Date().getFullYear())
+    let month = new Date().getMonth();
+    let birthMonth = new Date(this.livingBeing.birthday).getMonth();
+    let nextEarthBirthday;
+    if(month < birthMonth){
+      nextEarthBirthday = new Date(this.livingBeing.birthday).setFullYear(new Date().getFullYear())
+    }else{
+      nextEarthBirthday = new Date(this.livingBeing.birthday).setFullYear((new Date().getFullYear()+1));
+    }
+    return new Date((nextEarthBirthday - Date.now())*this.planet.earthYear + Date.now());
+  }
   
 
 }
