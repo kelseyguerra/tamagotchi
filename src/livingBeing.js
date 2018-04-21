@@ -1,5 +1,5 @@
 class LivingBeing {
-  constructor(birthday, avgLifespan) {
+  constructor(birthday="March 21, 2012", avgLifespan=89, name="earthPeople") {
     this.birthday = Date.parse(birthday);
     this.avgLifespan = avgLifespan;
   }
