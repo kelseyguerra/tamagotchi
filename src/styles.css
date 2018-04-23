@@ -1,9 +1,0 @@
-
-body {
-  background: linear-gradient(to right, rgba(34, 37, 29, 0.70), rgba(44, 38, 48, 0.899)), url(./bg.jpg) fixed center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 60%;
-  padding: 100px 0 500px 0px;
-  
-}
