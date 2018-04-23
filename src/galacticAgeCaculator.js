@@ -27,8 +27,7 @@ class GalacticAgeCaculator {
     } else {
       nextEarthBirthday = new Date(this.livingBeing.birthday).setFullYear((new Date().getFullYear() + 1));
     }
-    let planetBirthday = new Date((nextEarthBirthday - Date.now()) * this.planet.earthYear + Date.now());
-    return planetBirthday.getMonth() + "/" + planetBirthday.getDate() + "/" + planetBirthday.getFullYear(); 
+    return new Date((nextEarthBirthday - Date.now()) * this.planet.earthYear + Date.now());
   
   }
 

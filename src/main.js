@@ -43,6 +43,8 @@ $().ready( ()=> {
       let galacticAgeCaculator = new GalacticAgeCaculator(planet, livingBeing);
       let planetAge = galacticAgeCaculator.planetAge();
       let nextBirthday = galacticAgeCaculator.nextBirthdayDate();
+      nextBirthday = nextBirthday.getMonth() + "/" + nextBirthday.getDate() + "/" + nextBirthday.getFullYear(); 
+      
       let yearsLeft = Math.ceil(galacticAgeCaculator.yearsToGoOnOtherPlanets());
       let output = `<div class='mt-5'>
                      <h2 class='lead text-center'>${name}, On ${key} </h2><hr>  
