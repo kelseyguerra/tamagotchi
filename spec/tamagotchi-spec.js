@@ -7,9 +7,11 @@ describe ('Tamagotchi', function(){
     jasmine.clock().install();
     Tom.name = "Tom";
     Tom.healthLevel = 100;
-    Tom.setHunger();
-    Tom.setMood();
-    Tom.reset();
+
+    Tom.changeHealthLevel(16);
+    // Tom.setHunger();
+    // Tom.setSleep();
+    // Tom.reset();
 
   });
 
@@ -22,15 +24,24 @@ describe ('Tamagotchi', function(){
     expect(Tom.healthLevel).toEqual(100);
   });
 
-  it("should have a healthLevel of 99 after 1 second", () => {
+  // it("should have a healthLevel of 99 after 1 second", () => {
+  //   jasmine.clock().tick(1001);
+  //   expect(Tom.healthLevel).toEqual(102);
+  // });
+  //
+  // it("should have a healthLevel of 0 after 2 seconds", () =>{
+  //   jasmine.clock().tick(2001);
+  //   expect(Tom.healthLevel).toEqual(2);
+  // });
+
+  // it("should return one of below", () => {
+  //   expect(['tv', 'running', 'eat', 'sleep', 'playVideoGame'].includes(Tom.generateActivity())).toBe(true);
+  // });
+
+
+  it("should return 116", function(){
     jasmine.clock().tick(1001);
-    expect(Tom.healthLevel).toEqual(102);
+    expect(Tom.healthLevel).toEqual(116);
   });
-
-  it("should have a healthLevel of 0 after 2 seconds", () =>{
-    jasmine.clock().tick(2001);
-    expect(Tom.healthLevel).toEqual(2);
-  })
-
 
 });
