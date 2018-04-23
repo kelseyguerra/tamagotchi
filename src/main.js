@@ -8,13 +8,6 @@ import { Planet } from "../src/planet";
 import { LivingBeing } from "../src/livingBeing"
 
 
-// Return the age of a human in Mercury years. (A Mercury year is .24 Earth years.)
-// Return the age of a human in Venus years. (A Venus year is .62 Earth years.)
-// Return the age of a human in Mars years. (A Mars year is 1.88 Earth years.)
-// Return the age of a human in Jupiter years. (A Jupiter year is 11.86 Earth years.)
-
-
-
 $().ready( ()=> {
   $("#galactic").submit( e => {
     e.preventDefault();
