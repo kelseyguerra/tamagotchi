@@ -23,21 +23,19 @@ $ npm start
 
 ## Specifications
 
-- Behaviour: Calcs age, years to go and mayfly lifespans(in earth year) correctly.
-  - Input: "10, Mercury"
-  - Output: 41.67, 50, 5256000
-- Behaviour: Calcs age and years to go correctly.
-  - Input: "10, Venus"
-  - Output: 16.13, 50, 5256000
-- Behaviour: Calcs age and years to go correctly.
-  - Input: "10, Mars"
-  - Output: 5.32, 50, 5256000
-- Behaviour: Calcs age and years to go correctly.
-  - Input: "10, Jupiter"
-  - Output: 0.84, 50, 5256000
-- Behaviour: Calcs the age Keith Richards will be in dog years on the planet Jupiter in 2073
-  - input:
-  - output:
+- Behaviour: Calcs age, netxt birthday, years to have fun on each planet correctly.
+  - Input: "Adriana, 2/24/2018, 10"
+  - Output: "Adriana, on earth"
+            "0, 3/23/2019, 10"
+            "Adriana, On Venus"
+            "0, 11/5/2018, 7"...
+
+- Behaviour: Calcs age, netxt birthday, years to have fun on each planet correctly.
+  - Input: "Adriana, 1/1/1900, 50"
+  - Output: "Adriana, on earth"
+            "119, 11/31/2018, 69"
+            "Adriana, On Venus"
+            "74, 8/26/2018, 43"...
 
 
 ## Known Bugs
