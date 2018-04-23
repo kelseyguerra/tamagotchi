@@ -12,7 +12,7 @@ $().ready( ()=> {
   $("#galactic").submit( e => {
     e.preventDefault();
 
-    let earthYears = {
+    const earthYears = {
       Earth: 1,
       Venus: 0.62,
       Mars: 1.88,
@@ -26,10 +26,7 @@ $().ready( ()=> {
     let birthday = new Date($("#birthday").val());
     let avgLifespan = parseInt($("#avgLifespan").val());
 
-    // if(name !== "Earth People"){
-    //   name = "Earth People";
-    // }
-    debugger;
+    
     let livingBeing = new LivingBeing(birthday, avgLifespan, name);
     for(let key in earthYears){
       let planet = new Planet(key, earthYears[key], livingBeing);
@@ -56,7 +53,7 @@ $().ready( ()=> {
       $(".planets").append(output);
     }
 
-    // empty files
+    // empty fileds
     $("input").val("");
 
 
