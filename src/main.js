@@ -1,4 +1,5 @@
-import $ from "jquery";
+
+let Promise = require('es6-promise').Promise;import $ from "jquery";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -96,8 +97,57 @@ $().ready(function(){
   //  });
 
 
+  let promise1 = new Promise(function(resolve, reject){
+    let request = new XMLHttpRequest();
+    request.onload = function(){
+      if(this.status === 200){
+        resolve(request.responseText);
+      } else{
+        reject(Error(request.statusText));
+      }
+    }
+    request.open("GET", url, true);
+    request.send();
+  });
+  promise1.then(function(response){
+    let body = JSON.parse(response);
+    $('.showHumidity').append(`<p class='lead'>The humidity in ${city} is ${body.main.humidity}%</p>`);
+    $('.showHumidity').append(`<p class='lead'>The temperature in ${city} is ${body.main.temp} degrees.</p>`);
+  }, function(error){
+    $(".error").text(error);
+  });
+
+
+
+  let url2 = `http://api.openweathermap.org/data/2.5/weather?q=shanghai&appid=${process.env.weather}`;
+
+  let promise2 = new Promise(function(resolve, reject){
+    let request = new XMLHttpRequest();
+    request.onload = function(){
+      if(this.status === 200){
+        resolve(request.responseText);
+      } else{
+        reject(Error(request.statusText));
+      }
+    }
+    request.open("GET", url2, true);
+    request.send();
+  });
+  promise2.then(function(response){
+    let body = JSON.parse(response);
+    $('.showHumidity').append(`<p class='lead'>The humidity in shanghai is ${body.main.humidity}%</p>`);
+    $('.showHumidity').append(`<p class='lead'>The temperature in shanghai is ${body.main.temp} degrees.</p>`);
+  }, function(error){
+    $(".error").text(error);
+  });
+
+
+  Promise.race(promise1, promise2);
+
+
 
   });
+
 
 
 
