@@ -11,13 +11,11 @@ import play from "../img/play.gif";
 import sleep from "../img/sleep.gif";
 
 import {Tamagotchi} from "./Tamagotchi";
+// import {Data} from "./weath-api";
 
 $().ready(function(){
-
   $(".img-spot").html(`<img src=${img1} />`);
-
   let tomogotchi = new Tamagotchi("Tony");
-
   $(".btn").click(function(e){
     let eventTarget = e.target.id;
     let advice;
@@ -45,6 +43,58 @@ $().ready(function(){
     if(advice){
       $(".output").append(`<h5 class='text-center'>${advice}</h5>`);
     }
+
+
+  });
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////
+  $("#weatherLocation").submit(function(e){
+    e.preventDefault();
+    let city = $("input:text[name=city]").val();
+    let state = $("input:text[name=state]").val();
+    // getData(city, state,)
+    // let data = new Data(city, state, process.env.weather);
+    // data.getData();
+
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${state}&appid=${process.env.weather}`;
+    // $.ajax({
+    //   url: url,
+    //   type: 'GET',
+    //   data: {
+    //     format: 'json'
+    //   },
+    //   success: function(response) {
+    //     $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
+    //     $('.showTemp').text(`The temperature in ${city} is ${response.main.temp}.`);
+    //   },
+    //   error: function() {
+    //     $('.errors').text("There was an error processing your request. Please try again.")
+    //   }
+    // });
+
+    // let getElements = function(response){
+    //   $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
+    //  $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
+    // }
+    //
+    // let request = new XMLHttpRequest();
+    // request.onreadystatechange = function(){
+    //   if(this.readyState === 4 && this.status === 200){
+    //     let response = JSON.parse(this.responseText);
+    //     getElements(response);
+    //   }
+    // }
+    //
+    // request.open("GET", url, true);
+    // request.send();
+
+  //   $.get(url).then(function(response){
+  //     $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
+  //    $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
+  //  }).fail(function(error){
+  //    $(".error").text(error);
+  //  });
+
 
 
   });
