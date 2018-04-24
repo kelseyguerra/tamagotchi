@@ -1,12 +1,12 @@
 export class Tamagotchi {
   constructor(name){
-    this.name = "Tom";
-    this.healthLevel = 0;
-    this.tv = -10;
-    this.running = 8;
-    this.eat = 6;
+    this.name = "Bean";
+    this.healthLevel = 5;
+    // this.tv = -10;
+    // this.running = 8;
+    this.eat = 5;
     this.sleep = 10;
-    this.playVideoGame = -10;
+    this.playVideoGame = -30;
   }
 
     healthLevel() {
